@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minigolf | fun games</title>
+</head>
+<div class="nav">
+    <header>
+        <div class="navbar">
+            <Nav>
+                <a href="index.html">
+                    <img class="menu" src="img/Menu.png" alt="profile" height="50px" width="auto">
+                </a>
+                <p style="display: inline-block; font-size: large; font-family: 'Courier New', Courier, monospace; position: absolute; top: 2%; padding-left: 10px;"
+                    id="accountName">Account</p>
+                <!-- <img style="padding-left: 1%;" src="img/gold.png" alt="please refresh" height="20px" width="auto"> -->
+                <p></p>
+
+            </nav>
+
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="#"> <img class="profile" src="img/profile.JPG" alt="profile" height="50px" width="auto"> <br> Your
+                Account</a>
+            <a href="#">Setting</a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+    </header>
+</div>
+<script>
+    const menuImg = document.getElementById("menuImg")
+    var menuToggle = false
+    var r = document.querySelector(':root');
+    var profileNameElement = document.getElementById("accountName")
+
+    r.style.setProperty('--rotation', '180deg');
+    function getName() {
+        return (localStorage.getItem("username"))
+    }
+    if (getName() != null) {
+        profileNameElement.innerText = getName()
+    }
+</script>
+
+
+<body style="width: 100%;">
+    <canvas style="background-color: rgb(0, 111, 11);" id="canvas" class="canvas" onmousedown="dragStart(event)" onmouseup="dragEnd(event)"></canvas>
+    <script src="minigolf.js"></script>
+</body>
+
+</html>
